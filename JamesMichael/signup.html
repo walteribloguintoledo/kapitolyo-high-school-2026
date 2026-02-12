@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<style> 
+ body { 
+        font-family: Arial; 
+        text-align: center; 
+        background-color: rgb(185, 204, 116);
+      }
+
+form {
+  border-radius: 5px;
+  background-color: #1a6938;
+  padding: 20px;
+}       
+
+label {display: block;}
+
+input[type=text], select {
+  width: 50%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn{
+  width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+</style>
+<body>
+
+<h2>Sign up</h2>
+
+<form>
+  <label for="fullname">fullname</label>
+  <input type="text" id="fullname" name="fullname" placeholder="Your Name..">
+  <label for="nickname">nickname</label>
+  <input type="text" id="nickname" name="nickname" placeholder="Your Nickname..">
+  <label for="address">Address</label>
+  <input type="text" id="address" name="address" placeholder="Your Address..">
+  <label for="birthday">Birthday</label>
+  <input type="text" id="birthday" name="birthday" placeholder="MM/DD/YY..">
+  <label for="contactno">Contact No</label>
+  <input type="text" id="contactno" name="contactno" placeholder="Your Number..">
+  <label for="username">username</label>
+  <input type="text" id="username" name="username" placeholder="Your UserName..">
+  <label for="emai1add">email</label>
+  <input type="text" id="emai1add" name="emai1add" placeholder="Your Email..">
+  <label for="password">password</label>
+  <input type="text" id="password" name="password" placeholder="Your Password..">
+  <input type="button" class="btn" onclick="signup(event)" value="Submit"><br><br>
+</form>
+<p style="margin-top:15px;">
+       Already have an account? <a href="PAGE%2044.html">login here</a>
+    </p>
+
+<script>
+  function signup(event) {
+      event.preventDefault();
+
+  const fullname=document.getElementById("fullname").value;
+  const nickname=document.getElementById("nickname").value;
+  const address=document.getElementById("address").value;
+  const birthday=document.getElementById("birthday").value;
+  const contactno=document.getElementById("contactno").value;
+  const username=document.getElementById("username").value;
+  const emailadd=document.getElementById("emailadd").value;
+  const password=document.getElementById("password").value;
+
+  if (fullname==""){
+      alert("fullname empty");
+  }
+  if (nickname==""){
+      alert("nickname empty");
+  }
+  if (address==""){
+      alert("address empty");
+  }
+  if (birthday==""){
+      alert("birthday empty");
+  }
+  if (contactno==""){
+      alert("contactno empty");
+  }
+  if (username==""){
+      alert("username empty");    
+  }
+  if (emailadd==""){
+      alert("email empty");
+  }
+  if (password==""){
+      alert("password empty");
+  }
+
+  console.log(fullname);
+  console.log(nickname);
+  console.log(address);
+  console.log(birthday);
+  console.log(contactno);
+  console.log(username);
+  console.log(emailadd);
+  console.log(password);
+
+  document.getElementById(credentials).innerHTML
+  "fullname"+fullname
+  "nickname"+nickname
+  "address"+address
+  "birthday"+birthday
+  "contactno"+contactno
+  "username"+username
+  "email"+emailadd
+  "password"+password
+  
+
+}
+
+    </script>
+</body>
+</html>

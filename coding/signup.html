@@ -1,0 +1,69 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup
+    </title>
+    <h1>Signup</h1>
+    <link rel="stylesheet" href="signupstlye.css"> 
+</head>
+</body>
+
+<!-- incline, internal, extermal -->
+        
+        <label for="Fullname">Fullname:</label><br>
+        <input type="text" id="Fullname" name="Fullname" value="" required><br>
+        <label for="Nickname">Nickname:</label><br>
+        <input type="text" id="Nickname" name="Nickname" value="" required><br>
+        <label for="Address">Address:</label><br>
+        <input type="text" id="Address" name="Address" value="" required><br>
+        <label for="Birthday">Birthday:</label><br>
+        <input type="text" id="Birthday" name="Birthday" value="" required><br>
+        <label for="Contact">Contact:</label><br>
+        <input type="text" id="Contact" name="Contact" value="" required><br>
+        <label for="Username">Username</label>:</label><br>
+        <input type="text" id="Username" name="Username" value="" required><br>
+        <label for="Email">Email:</label><br>
+        <input type="text" id="Email" name="Email" value="" required><br>
+        <label for="Password">Password:</label><br>
+        <input type="Password" id ="Password" name="Password" value="" required><br>
+        <button id="myBtn" onclick="displayRecord()">Submit</button>
+<!-- <button onclick="window.location.href='home.html'">Submit</button> -->
+
+<script>
+//document.getElementById("myBtn").addEventListener("click", displayRecord);
+
+function displayRecord() {
+  let fullname = document.getElementById("Fullname").value;
+  let nickname = document.getElementById("Nickname").value;
+  let address = document.getElementById("Address").value;
+  let birthday = document.getElementById("Birthday").value;
+  let contact = document.getElementById("Contact").value;
+  let username = document.getElementById("Username").value;
+  let email = document.getElementById("Email").value;
+  let Password = document.getElementById("Password").value;
+  console.log(fullname);
+  console.log(nickname);
+  console.log(address);
+  console.log(birthday);
+  console.log(contact);
+  console.log(username);
+  console.log(email);
+  console.log(Password);
+  document.getElementById("canvas").innerHTML = "Fullname: " + fullname + "<br>" + "Nickname: " + nickname + "<br>" + "Address: " + address + "<br>" + "Birthday: " + birthday + "<br>" + "Contact: " + contact + "<br>" + "Username: " + username + "<br>" + "Email: " + email + "<br>" + "Password: " + password;
+  
+if(fullname === "" || nickname === "" || address === "" || birthday === "" || contact === "" || username === "" || email === "" || Password === "")
+{alert("Please fill in all the fields.");
+  }
+}
+</script>
+
+
+
+        </form>    
+</body>
+</html>
+
+
+    

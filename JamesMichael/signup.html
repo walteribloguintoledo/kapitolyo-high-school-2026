@@ -1,132 +1,209 @@
 <!DOCTYPE html>
+
 <html>
-<style> 
- body { 
-        font-family: Arial; 
-        text-align: center; 
-        background-color: rgb(185, 204, 116);
-      }
 
-form {
-  border-radius: 5px;
-  background-color: #1a6938;
-  padding: 20px;
-}       
+    <head>
 
-label {display: block;}
+        <title>Sign Up</title>
 
-input[type=text], select {
-  width: 50%;
-  padding: 12px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
+        <style>
 
-.btn{
-  width: 50%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+            form {
+                border-radius: 5px;
+                background-color: #22a7ac;
+                padding: 20px;
+            }
 
-.btn:hover {
-  background-color: #45a049;
-}
-</style>
-<body>
+            label {display: block;}
 
-<h2>Sign up</h2>
+            input[type=text], select {
+                width: 50%;
+                padding: 12px;
+                margin: 8px;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
 
-<form>
-  <label for="fullname">fullname</label>
-  <input type="text" id="fullname" name="fullname" placeholder="Your Name..">
-  <label for="nickname">nickname</label>
-  <input type="text" id="nickname" name="nickname" placeholder="Your Nickname..">
-  <label for="address">Address</label>
-  <input type="text" id="address" name="address" placeholder="Your Address..">
-  <label for="birthday">Birthday</label>
-  <input type="text" id="birthday" name="birthday" placeholder="MM/DD/YY..">
-  <label for="contactno">Contact No</label>
-  <input type="text" id="contactno" name="contactno" placeholder="Your Number..">
-  <label for="username">username</label>
-  <input type="text" id="username" name="username" placeholder="Your UserName..">
-  <label for="emai1add">email</label>
-  <input type="text" id="emai1add" name="emai1add" placeholder="Your Email..">
-  <label for="password">password</label>
-  <input type="text" id="password" name="password" placeholder="Your Password..">
-  <input type="button" class="btn" onclick="signup(event)" value="Submit"><br><br>
-</form>
-<p style="margin-top:15px;">
-       Already have an account? <a href="PAGE%2044.html">login here</a>
-    </p>
+            .btn {
+                width: 50%;
+                background-color: #333333;
+                color: white;
+                padding: 14px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
 
-<script>
-  function signup(event) {
-      event.preventDefault();
+            .btn:hover {
+                background-color: #111111;
+            }
 
-  const fullname=document.getElementById("fullname").value;
-  const nickname=document.getElementById("nickname").value;
-  const address=document.getElementById("address").value;
-  const birthday=document.getElementById("birthday").value;
-  const contactno=document.getElementById("contactno").value;
-  const username=document.getElementById("username").value;
-  const emailadd=document.getElementById("emailadd").value;
-  const password=document.getElementById("password").value;
+            input[type=text]:focus {
+                background-color: lightgrey;
+            }
 
-  if (fullname==""){
-      alert("fullname empty");
-  }
-  if (nickname==""){
-      alert("nickname empty");
-  }
-  if (address==""){
-      alert("address empty");
-  }
-  if (birthday==""){
-      alert("birthday empty");
-  }
-  if (contactno==""){
-      alert("contactno empty");
-  }
-  if (username==""){
-      alert("username empty");    
-  }
-  if (emailadd==""){
-      alert("email empty");
-  }
-  if (password==""){
-      alert("password empty");
-  }
+            #birthdate {
+                width: 48%;
+                background-color: #672169;
+                color: white;
+                padding: 14px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                text-align: center;
+            }
 
-  console.log(fullname);
-  console.log(nickname);
-  console.log(address);
-  console.log(birthday);
-  console.log(contactno);
-  console.log(username);
-  console.log(emailadd);
-  console.log(password);
+            #birthdate:hover {
+                background-color: #672169;
+            }
 
-  document.getElementById(credentials).innerHTML
-  "fullname"+fullname
-  "nickname"+nickname
-  "address"+address
-  "birthday"+birthday
-  "contactno"+contactno
-  "username"+username
-  "email"+emailadd
-  "password"+password
-  
+            body {
+                background-color:beige;
+                text-align:center;
+            }
 
-}
+        </style>
 
-    </script>
-</body>
+    </head>
+
+    <body>
+
+        <h2>Sign Up</h2>
+
+        <form> <label for="fullname">Full name:</label><br>
+               <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                placeholder="Your full name"><br>
+
+               <label for="nickname">Nickname:</label><br>
+               <input
+                type="text"
+                id="nickname"
+                name="nickname"
+                placeholder="Your nickname"><br>
+
+                <label for="address">address:</label><br>
+                <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Your address"><br>
+
+               <label for="birthdate">Birthdate:</label><br>
+               <input
+                type="date"
+                id="birthdate"
+                name="birthdate"
+                placeholder="Your birthdate"><br>
+
+               <label for="contact">Contact No:</label><br>
+               <input
+                type="text"
+                id="contact"
+                name="contact"
+                placeholder="Your contact number"><br>
+
+               <label for="username">Username:</label><br>
+               <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Your username"><br>
+
+               <label for="email">Email:</label><br>
+               <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Your email"><br>
+
+               <label for="password">Password:</label><br>
+               <input
+                type="text"
+                id="password"
+                name="password"
+                placeholder="Your password"><br><br>
+
+               <input
+                type="button"
+                class="btn"
+                onclick="signup(event)"
+                value="Submit"><br><br>
+        </form>
+
+        <p>Already have an account?
+            <a href="login.html">Login here</a></p>
+
+        <script>
+
+            function signup(event) {
+                event.preventDefault();
+
+                const fullname=document.getElementById("fullname").value;
+                const nickname=document.getElementById("nickname").value;
+                const address=document.getElementById("address").value;
+                const birthdate=document.getElementById("birthdate").value;
+                const contact=document.getElementById("contact").value;
+                const username=document.getElementById("username").value;
+                const email=document.getElementById("email").value;
+                const password=document.getElementById("password").value;
+
+                if (fullname=="") {
+                    alert("Fullname empty");
+                }
+                if (nickname=="") {
+                    alert("nickname empty");
+                }
+                if (address=="") {
+                    alert("address empty");
+                }
+                if (birthdate=="") {
+                    alert("birthdate empty");
+                }
+                if (contact=="") {
+                    alert("contact empty");
+                }
+                else if (isNaN(contact)) {
+                    alert("invalid contact")
+                }
+                if (username=="") {
+                    alert("username empty");
+                }
+                if (email=="") {
+                    alert("email empty");
+                }
+                if (password=="") {
+                    alert("password empty");
+                }  
+
+                console.log(fullname);
+                console.log(nickname);
+                console.log(address);
+                console.log(birthdate);
+                console.log(contact);
+                console.log(username);
+                console.log(email);
+                console.log(password);
+
+                documnent.getElementById(credentials).InnerHTML=
+                    "fullname"+fullname
+                    "nickname"+nickname
+                    "address"+adrdess
+                    "birthday"+birthdate
+                    "contact"+contact
+                    "username"+username
+                    "email"+email
+                    "password"+password
+            }
+
+        </script>
+
+    </body>
+
 </html>

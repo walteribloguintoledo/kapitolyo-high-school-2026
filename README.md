@@ -7,7 +7,6 @@ Kapitolyo High School 2026
     ```bash
     git clone https://github.com/walteribloguintoledo/kapitolyo-high-school-2026.git
     ```
-
 1. First, you need to pull all the latest copy.
     ```bash
     git pull https://github.com/walteribloguintoledo/kapitolyo-high-school-2026.git

@@ -29,5 +29,9 @@ git clone https://github.com/walteribloguintoledo/kapitolyo-high-school-2026.git
     git push https://github.com/walteribloguintoledo/kapitolyo-high-school-2026.git
     ```
 
-Key Contributors: 
-Kapitolyo High School Students
+## Key Contributors: 
+### Kapitolyo High School Students
+* Adrian Beruan
+* Marcus John Beau Mahusay
+* Christianbar Mendoza
+* James Michael Feliciano

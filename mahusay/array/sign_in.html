@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign In</title>
+    <style>
+        * {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        body {
+            background-color: blanchedalmond;
+        }
+
+        input[type=text]:focus {
+            background-color: lightblue;
+        }
+
+        label {
+            display: block;
+        }
+
+        input[type=text] {
+            width: 20%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* button {
+            width: 20%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        } */
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #records {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Sign In</h2>
+
+<form id="myForm">
+
+    <label>Fullname:</label>
+    <input type="text" id="fullname" placeholder="Fullname">
+
+    <label>Nickname:</label>
+    <input type="text" id="nickname" placeholder="Nickname">
+
+    <label>Address:</label>
+    <input type="text" id="address" placeholder="Address">
+
+    <label>Birthday:</label>
+    <input type="text" id="birthday" placeholder="Birthday">
+
+    <label>Contact no.:</label>
+    <input type="text" id="contact" placeholder="Contact no.">
+
+    <label>Username:</label>
+    <input type="text" id="username" placeholder="Username">
+
+    <button type="button" onclick="displayRecord()">Sign In</button>
+
+</form>
+
+<div id="records"></div>
+
+<script>
+
+let users = []; 
+
+function displayRecord() {
+
+    let fullname = document.getElementById("fullname").value;
+    let nickname = document.getElementById("nickname").value;
+    let address = document.getElementById("address").value;
+    let birthday = document.getElementById("birthday").value;
+    let contact = document.getElementById("contact").value;
+    let username = document.getElementById("username").value;
+
+   
+    if (!fullname || !nickname || !address || !birthday || !contact || !username) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+   
+    users.push({
+        fullname,
+        nickname,
+        address,
+        birthday,
+        contact,
+        username
+    });
+
+    console.log(users); 
+
+    
+    let output = "<h3>Saved Records:</h3>";
+
+    users.forEach(function(user, index) {
+        output += `
+            <p>
+                <strong>Record ${index + 1}</strong><br>
+                Fullname: ${user.fullname}<br>
+                Nickname: ${user.nickname}<br>
+                Address: ${user.address}<br>
+                Birthday: ${user.birthday}<br>
+                Contact: ${user.contact}<br>
+                Username: ${user.username}
+            </p>
+            <hr>
+        `;
+    });
+
+    document.getElementById("records").innerHTML = output;
+
+    
+    document.getElementById("myForm").reset();
+}
+
+</script>
+
+</body>
+</html>

@@ -1,65 +1,105 @@
 <!DOCTYPE html>
 <html>
-<style> 
- 
 
- body { 
-        font-family: Arial; 
-        text-align: center; 
-        background-color: rgb(185, 204, 116);
-      }
-       h1 
+<head>
+<title>Log In</title>
+
+<style> 
+body { 
+    font-family: Arial; 
+    text-align: center; 
+    background-color: rgb(185, 204, 116);
+}
 
 form {
-  border-radius: 5px;
-  background-color: #1a6938;
-  padding: 20px;
-}       
-
-label {display: block;}
-
-input[type=text], select {
-  width: 50%;
-  padding: 12px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #1a6938;
+    padding: 20px;
 }
 
-input[type=submit] {
-  width: 50%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+label { display: block; }
+
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
+button {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
 }
 </style>
+
+</head>
+
 <body>
 
 <h2>LOG IN</h2>
 
-<form action="homepage.html">
-  <label for="fname">Username</label>
-  <input type="text" id="fname" name="firstname" placeholder="Name..">
+<form id="loginForm">
 
-  <label for="lname">Password</label>
-  <input type="text" id="lname" name="lastname" placeholder="Password..">
+  <label>Username</label>
+  <input type="text" id="loginUsername" placeholder="Username">
 
-  <input type="submit" value="Submit">
-   <p style="margin-top:15px;">
-        No account? <a href="signup.html">Signup here</a>
-    </p>
+  <label>Password</label>
+  <input type="password" id="loginPassword" placeholder="Password">
+
+  <button type="submit">Login</button>
+
+  <p style="margin-top:15px;">
+    No account? <a href="signup.html">Signup here</a>
+  </p>
 
 </form>
 
-</body> 
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+    $("#loginForm").submit(function(e){
+        e.preventDefault();
+
+        let enteredUsername = $("#loginUsername").val().trim();
+        let enteredPassword = $("#loginPassword").val().trim();
+
+        let savedUsername = localStorage.getItem("username");
+        let savedPassword = localStorage.getItem("password");
+
+        console.log("Entered:", enteredUsername, enteredPassword);
+        console.log("Saved:", savedUsername, savedPassword);
+
+        if(
+            enteredUsername === savedUsername &&
+            enteredPassword === savedPassword
+        ){
+            alert("Login Successful!");
+            window.location.href = "homepage.html";
+        } else {
+            alert("Invalid Username or Password!");
+        }
+
+    });
+
+});
+
+</script>
+
+</script>
+
+</body>
 </html>

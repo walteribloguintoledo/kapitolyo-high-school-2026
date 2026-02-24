@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>James Michael Feliciano | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
+    text-decoration: none;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    line-height:1.6;
+}
+
+header{
+    background:#1e293b;
+    width: 100%;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    z-index: 1;
+}
+
+header h1{
+    color:#38bdf8;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* HERO */
+.hero{
+    padding:100px 10%;
+    text-align:center;
+}
+
+.hero h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.hero span{
+    color:#38bdf8;
+}
+
+.typing{
+    border-right:3px solid #38bdf8;
+    white-space:nowrap;
+    overflow:hidden;
+    display:inline-block;
+    animation:typing 3s steps(30), blink 0.7s infinite;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#38bdf8;
+    color:black;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    background:#0ea5e9;
+}
+
+/* SECTIONS */
+section{
+    padding:80px 10%;
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
+}
+
+section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+h3{
+    margin-bottom:20px;
+    font-size:28px;
+    color:#38bdf8;
+}
+
+/* ABOUT SECTION */
+.about-container{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.profile-pic{
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #38bdf8;
+}
+
+/* SKILLS */
+.skills li{
+    background:#1e293b;
+    padding:10px;
+    margin-bottom:10px;
+    border-left:4px solid #38bdf8;
+    transition:0.3s;
+}
+
+.skills li:hover{
+    transform:translateX(10px);
+}
+
+/* PROJECT */
+.project-card{
+    background:#1e293b;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.project-card:hover{
+    transform:scale(1.05);
+}
+
+/* CERTIFICATE */
+.certificate-box{
+    background:#1e293b;
+    padding:20px;
+    border-left:4px solid #38bdf8;
+    border-radius:5px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#1e293b;
+    margin-top:40px;
+}
+
+/* ANIMATION */
+@keyframes typing{
+    from{width:0}
+    to{width:100%}
+}
+
+@keyframes blink{
+    50%{border-color:transparent}
+}
+
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+    }
+    .hero h2{
+        font-size:28px;
+    }
+    .about-container{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #38bdf8;
+}
+
+.profile-pic {
+    display: block;
+    margin: 0 auto;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>James Michael Feliciano</h1>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#certificate">Certificate</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Hello, I'm <span>James</span></h2>
+<p class="typing">A passionate Web Developer who creates websites.</p>
+<br><br>
+<a href="#projects" class="btn">View My Work</a>
+</section>
+
+<section id="about">
+<h3>About Me</h3>
+<div class="about-container">
+
+
+<img src="profile.jpg.jfif" class="profile-pic">
+
+<p>
+My name is James Michael Feliciano, and I am an aspiring web developer with a strong interest in 
+creating clean, responsive, and user-friendly websites. I am passionate about continuously 
+improving my technical skills and developing meaningful web experiences. 
+I actively explore new technologies and dedicate time each day to enhancing my knowledge and 
+coding abilities in the field of web development.
+</p>
+
+</div>
+</section>
+
+<section id="skills" class="skills">
+<h3>My Skills</h3>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript (Basic)</li>
+</ul>
+</section>
+
+<section id="projects">
+<h3>My Projects</h3>
+
+<div class="project-card">
+<h4>Reporting</h4>
+<p>On the first day, we were assigned to prepare a report to present on the second day. 
+    We focused on the basic elements of coding, and I was given the task of learning JavaScript. 
+    I learned some basics, and the deadline to complete it was tomorrow. 
+    I did my best to finish the report, but there 
+    were some algorithms that I didn’t fully understand</p>
+</div>
+<a href="signup.html" style="color: white;">
+    
+    <div class="project-card">
+    <h4>Login to Signup System</h4>
+    <p>During our Login and Sign-Up System project, our guide 
+        Mr. Walter taught us the basic techniques in HTML, CSS, and JavaScript. He showed us 
+        how to create forms, design the layout, and add simple functions like input validation.
+      He also introduced us to W3Schools, which helped us understand the codes better. This project 
+      improved our skills in coding and building a simple user login system.</p>
+    </div>
+</a>
+
+<div class="project-card">
+<h4>My Portfolio Website</h4>
+<p>Today, February 24, 2026, we were tasked to create a portfolio website. This project helps prepare us 
+    for future side jobs in IT and for college applications, so it is very helpful for our future.
+In my portfolio website, I included my personal information, skills, projects, and contact details. 
+I designed it using HTML and CSS to make it clean and professional. 
+This activity improved my web design skills and helped me understand how to present myself 
+professionally online.</p>
+</div>
+
+</section>
+
+
+<section id="certificate">
+<h3>Certificates</h3>
+
+<div class="certificate-box">
+<h4>NC II Passer TESDA</h4>
+<p>
+National Certificate II (NCII) Passer — Certified in Technical Skills
+and Competency.
+</p>
+</div>
+
+</section>
+
+<section id="contact">
+<h3>Contact Me</h3>
+<p>Email: jamesmfeliciano06@gmail.com</p>
+<p>Contact: 09662274456</p>
+</section>
+
+<footer>
+<p>© 2026 James Michael Feliciano</p>
+</footer>
+
+<script>
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+sections.forEach(section => {
+const sectionTop = section.getBoundingClientRect().top;
+if(sectionTop < window.innerHeight - 100){
+section.classList.add("show");
+}
+});
+});
+</script>
+
+</body>
+</html>

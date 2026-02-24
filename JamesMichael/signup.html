@@ -139,6 +139,63 @@
 
         <p>Already have an account?
             <a href="login.html">Login here</a></p>
+              <!-- jQuery CDN -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    $(".btn").click(function(e) {
+        e.preventDefault();
+
+        let fullname = $("#fullname").val();
+        let nickname = $("#nickname").val();
+        let address = $("#address").val();
+        let birthdate = $("#birthdate").val();
+        let contact = $("#contact").val();
+        let username = $("#username").val();
+        let email = $("#email").val();
+        let password = $("#password").val();
+
+        if (!fullname || !nickname || !address || !birthdate ||
+            !contact || !username || !email || !password) {
+            alert("All fields are required!");
+            return;
+        }
+
+        if (isNaN(contact)) {
+            alert("Contact must be numbers only!");
+            return;
+        }
+
+        let user = {
+            fullname: fullname,
+            nickname: nickname,
+            address: address,
+            birthdate: birthdate,
+            contact: contact,
+            username: username,
+            email: email,
+            password: password
+        };
+
+        // Get existing users
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        // Add new user
+        users.push(user);
+
+        // Save back to localStorage
+        localStorage.setItem("users", JSON.stringify(users));
+
+        alert("User Successfully Registered!");
+
+        window.location.href = "login.html";
+    });
+
+});
+</script>
+
 
         <script>
 
@@ -201,6 +258,196 @@
                     "email"+email
                     "password"+password
             }
+
+    
+        let users = [];
+
+   
+        function calculateAge(birthdate) {
+        const today = new Date();
+        const birth = new Date(birthdate);
+        let age = today.getFullYear() - birth.getFullYear();
+        return age;
+}
+
+    
+        function signup(event) {
+        event.preventDefault();
+
+        const fullname = document.getElementById("fullname").value;
+        const nickname = document.getElementById("nickname").value;
+        const address = document.getElementById("address").value;
+        const birthdate = document.getElementById("birthdate").value;
+        const contact = document.getElementById("contact").value;
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+   
+        if (!fullname || !nickname || !address || !birthdate ||
+        !contact || !username || !email || !password) {
+        alert("All fields are required!");
+        return;
+        }
+
+    if (isNaN(contact)) {
+        alert("Contact must be numbers only!");
+        return;
+    }
+
+    
+    const user = {
+        fullname: fullname,
+        nickname: nickname,
+        address: address,
+        birthdate: birthdate,
+        age: calculateAge(birthdate),
+        contact: contact,
+        username: username,
+        email: email,
+        password: password
+    };
+
+    
+        users.push(user);
+
+        console.log("All Users:");
+
+    
+        users.forEach(function(u, index) {
+        console.log("User #" + (index + 1));
+        console.log("Name:", u.fullname);
+        console.log("Age:", u.age);
+        console.log("Email:", u.email);
+        });
+
+    alert("User Successfully Added!");
+
+    
+    if (users.length > 5) {
+        users.splice(0, 1);
+        console.log("First user removed using splice()");
+    }
+}
+        
+
+    $(document).ready(function() {
+    
+    let users = [];
+
+   
+    function calculateAge(birthdate) {
+        const today = new Date();
+        const birth = new Date(birthdate);
+        let age = today.getFullYear() - birth.getFullYear();
+        return age;
+    }
+
+    
+    $(".btn").click(function(e) {
+        e.preventDefault();
+
+       
+        let fullname = $("#fullname").val();
+        let nickname = $("#nickname").val();
+        let address = $("#address").val();
+        let birthdate = $("#birthdate").val();
+        let contact = $("#contact").val();
+        let username = $("#username").val();
+        let email = $("#email").val();
+        let password = $("#password").val();
+
+        
+        if (!fullname || !nickname || !address || !birthdate ||
+            !contact || !username || !email || !password) {
+            alert("All fields required!");
+            return;
+        }
+
+        if (isNaN(contact)) {
+            alert("Contact must be numbers only!");
+            return;
+        }
+
+        
+        let user = {
+            fullname: fullname,
+            nickname: nickname,
+            address: address,
+            birthdate: birthdate,
+            age: calculateAge(birthdate),
+            contact: contact,
+            username: username,
+            email: email,
+            password: password
+        };
+
+        
+        users.push(user);
+
+        console.log("All Users:");
+        
+        
+        $.each(users, function(index, u) {
+            console.log("User #" + (index + 1));
+            console.log("Name:", u.fullname);
+            console.log("Age:", u.age);
+        });
+
+        alert("User Added Successfully!");
+
+        // SET (Clear Form)
+        $("input[type=text], input[type=date]").val("");
+
+    });
+
+});
+
+$(".btn").click(function(e) {
+    e.preventDefault();
+
+    let fullname = $("#fullname").val();
+    let nickname = $("#nickname").val();
+    let address = $("#address").val();
+    let birthdate = $("#birthdate").val();
+    let contact = $("#contact").val();
+    let username = $("#username").val();
+    let email = $("#email").val();
+    let password = $("#password").val();
+
+    if (!fullname || !nickname || !address || !birthdate ||
+        !contact || !username || !email || !password) {
+        alert("All fields required!");
+        return;
+    }
+
+    if (isNaN(contact)) {
+        alert("Contact must be numbers only!");
+        return;
+    }
+
+    let user = {
+        fullname,
+        nickname,
+        address,
+        birthdate,
+        contact,
+        username,
+        email,
+        password
+    };
+
+    users.push(user);
+
+    alert("User Added Successfully!");
+
+    // ✅ REDIRECT TO LOGIN PAGE
+    window.location.href = "login.html";
+});
+
+// Save user in localStorage
+
+
 
         </script>
 

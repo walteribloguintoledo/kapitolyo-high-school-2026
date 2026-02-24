@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Login</title>
+
+        <style>
+
+            form {
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 20px;
+            }
+
+            label {display: block;}
+
+            input[type=text], select {
+                width: 70%;
+                padding: 12px;
+                margin: 8px;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type=submit] {
+                width: 70%;
+                background-color: #333333;
+                color: white;
+                padding: 14px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+                background-color: #111111;
+            }
+
+            input[type=text]:focus {
+                background-color: lightgrey;
+            }
+
+            body {
+                background-color:beige;
+                text-align:center;
+            }
+
+            div {
+                display:flex
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <h2>Login</h2>
+        <form action="/avasia/avasia/day%201/home%20page.html">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" placeholder="Your account username"><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email" placeholder="Your email address"><br>
+            <label for="password">Password:</label><br>
+            <input type="text" id="password" name="password" placeholder="Your password"><br><br>
+            <input type="submit" value="Submit"><br><br>
+        </form>
+
+        <p>Don't have an account? <a href="/avasia/avasia/day%201/signup.html">Sign up here</a></p>
+    </body>
+
+</html>

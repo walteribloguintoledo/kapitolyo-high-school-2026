@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Form</title>
     
+    <!-- Added jQuery Library -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <style>
@@ -90,7 +91,7 @@
             text-decoration: underline;
         }
         
-
+        /* Display Area Styles */
         #canvas {
             margin-top: 20px;
             padding: 15px;
@@ -164,9 +165,14 @@
     </div>
 
 <script>
-
+/* ========================================================
+   TASK 1: SAVE FORM INPUTS INTO AN ARRAY
+   ======================================================== */
 const users = [];
 
+/* ========================================================
+   TASK 2: ACCESS AND PRINT ARRAY PROPERTIES
+   ======================================================== */
 function printArrayInfo(arr) {
     console.log("=== ARRAY INFO ===");
     console.log("Full Array:", arr);
@@ -177,6 +183,10 @@ function printArrayInfo(arr) {
         console.log("Last user email:", arr[arr.length - 1].email);
     }
 }
+
+/* ========================================================
+   TASK 3: SAVE MULTI USER INPUTS - LOOP THROUGH PROPERTIES
+   ======================================================== */
 
 function makeUser(fullname, nickname, address, birthday, contact, username, email, password) {
     return {
@@ -191,8 +201,9 @@ function makeUser(fullname, nickname, address, birthday, contact, username, emai
     };
 }
 
-
+// Function to loop through all users and display them
 function listAllUsers() {
+    // CONVERTED: document.getElementById -> $("#id")
     const userListDiv = $("#userList");
     let html = "<h4>All Registered Users:</h4>";
     
@@ -211,9 +222,14 @@ function listAllUsers() {
             </div>
         `;
     }
-
+    
+    // CONVERTED: .innerHTML =  -> .html()
     userListDiv.html(html);
 }
+
+/* ========================================================
+   TASK 4: CREATE A FUNCTION WITH ARGUMENTS
+   ======================================================== */
 
 function calculateAge(birthdayString) {
     const birthday = new Date(birthdayString);
@@ -229,10 +245,12 @@ function calculateAge(birthdayString) {
     return age;
 }
 
+// (b) Function for FORM SUBMISSION
 function handleSignup(event) {
-
+    // Prevent the form from submitting to a server
     event.preventDefault();
     
+    // CONVERTED: document.getElementById("id").value -> $("#id").val()
     let fullname = $("#fullname").val();
     let nickname = $("#nickname").val();
     let address = $("#address").val();
@@ -241,27 +259,34 @@ function handleSignup(event) {
     let username = $("#username").val();
     let email = $("#email").val();
     let password = $("#password").val();
-
+    
+    // Check if all required fields are filled
     if (fullname === "" || nickname === "" || address === "" || birthday === "" || 
         contact === "" || username === "" || email === "" || password === "") {
         alert("Please fill in all the fields.");
         return;
     }
-
+    
+    // Use the age function to check if user is at least 13 years old
     const userAge = calculateAge(birthday);
     if (userAge < 13) {
         alert("Sorry, you must be at least 13 years old to sign up.");
         return;
     }
     
+    // Create user object using the makeUser function
     const newUser = makeUser(fullname, nickname, address, birthday, contact, username, email, password);
     
+    // Save user to the array (Task 1)
     users.push(newUser);
     
+    // Print array properties (Task 2)
     printArrayInfo(users);
     
+    // CONVERTED: document.getElementById("canvas").style.display = "block" -> $("#canvas").show()
     $("#canvas").show();
-
+    
+    // CONVERTED: document.getElementById("userInfo").innerHTML -> $("#userInfo").html()
     $("#userInfo").html(`
         <p><strong>Full Name:</strong> ${fullname}</p>
         <p><strong>Nickname:</strong> ${nickname}</p>
@@ -272,9 +297,11 @@ function handleSignup(event) {
         <p><strong>Username:</strong> ${username}</p>
         <p><strong>Email:</strong> ${email}</p>
     `);
-  
+    
+    // Loop through and display all users (Task 3)
     listAllUsers();
-
+    
+    // Console log all values
     console.log("=== NEW USER DATA ===");
     console.log("Full Name:", fullname);
     console.log("Nickname:", nickname);
@@ -286,9 +313,13 @@ function handleSignup(event) {
     console.log("Email:", email);
     console.log("Password:", password);
     
+    // CONVERTED: document.getElementById("signupForm").reset() -> $("#signupForm")[0].reset()
+    // Note: reset() is not a jQuery method, so we use [0] to access the DOM element
     $("#signupForm")[0].reset();
 }
 
+// CONVERTED: document.getElementById("signupForm").addEventListener("submit", handleSignup)
+// -> $("#signupForm").on("submit", handleSignup)
 $("#signupForm").on("submit", handleSignup);
 
 </script>

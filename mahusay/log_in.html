@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>log in</title>
+    <link rel="stylesheet" href="log_in.css">
+    
+<style>
+    
+   * {
+        /* text-align: center; */
+        font-family: arial;
+    }
+    input[type=text]:focus
+    {
+        background-color: lightblue;
+    }
+    label{
+        display: block;
+    }
+    /* input[type=button]
+        {
+        width: 200%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer; 
+        
+            }  */
+        
+    label {display: block;}
+
+    input[type=text], select {
+        width: 200%;
+        padding: 12px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        text-align: center;
+            }
+        input[type=submit]:hover {
+        background-color: #45a049;
+        }
+
+        .log-in-form {
+            width: 85%; 
+            height: 80vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;
+            text-align: center;
+        }
+        
+        form {
+            /* display: flex; 
+            flex-direction: column;  */
+            gap: 10px;
+            text-align: center;
+        }
+
+        form div {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+</style>
+</head>
+<body style="background-color: blanchedalmond; ">
+    
+    <div class="log-in-form">
+        <div>
+            <h2> log in</h2>
+            <form>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="Email" placeholder="Email">
+                </div>
+                <div>   
+                    <label for="password">Password:</label>
+                    <input type="text" id="password" name="Password" placeholder="Password">
+                </div>
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="Username" placeholder="Username">
+                </div>
+                
+                <button type="button" id="sign_in" onclick="displayRecord()">log in</button>
+                <a href="index.html">sign up</a>
+                
+                
+            </form>
+
+            <script>
+
+                    function displayRecord() {
+                    let email = document.getElementById("email").value;
+                    let password = document.getElementById("password").value;
+                    let username = document.getElementById("username").value;
+
+                
+                            if (email=="") {
+                            alert("email empty");
+                        }
+
+                        if (password=="") {
+                            alert("password empty");
+                        }
+
+                        if (username=="") {
+                            alert("no username");
+                        }
+
+
+                    console.log(email);
+                    console.log(password);
+                    console.log(username);
+                    
+                
+            
+                    document.getElementById(canvas).innerHTML = 
+                    'email ' + email + 'password ' + password +
+                    "username " + username;
+                }
+
+
+            </script>
+
+            
+         </div>
+    </div>
+
+</body>
+</html>
